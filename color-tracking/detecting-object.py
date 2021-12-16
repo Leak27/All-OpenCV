@@ -25,8 +25,8 @@ import cv2
 
 
 # Defining lower bounds and upper bounds of founded Mask
-min_blue, min_green, min_red = 21, 222, 70
-max_blue, max_green, max_red = 176, 255, 255
+min_blue, min_green, min_red = 102, 126, 130
+max_blue, max_green, max_red = 120, 255, 255
 
 # Getting version of OpenCV that is currently used
 # Converting string into the list by dot as separator
@@ -99,7 +99,7 @@ while True:
                       (0, 255, 0), 3)
 
         # Preparing text for the Label
-        label = 'Color Detected'
+        label = 'Detected Blue Color'
 
         # Putting text with Label on the current BGR frame
         cv2.putText(frame_BGR, label, (x_min - 5, y_min - 25),
@@ -108,8 +108,8 @@ while True:
     # Showing current BGR frame with Detected Object
     # Giving name to the window with Detected Object
     # And specifying that window is resizable
-    cv2.namedWindow('Detected Object', cv2.WINDOW_NORMAL)
-    cv2.imshow('Detected Object', frame_BGR)
+    cv2.namedWindow('Detected Blue Color', cv2.WINDOW_NORMAL)
+    cv2.imshow('Detected Blue Color', frame_BGR)
 
     # Breaking the loop if 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
